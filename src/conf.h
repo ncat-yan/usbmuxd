@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
 #ifndef CONF_H
@@ -26,13 +26,16 @@
 
 #include <plist/plist.h>
 
+void config_set_config_dir();
 const char *config_get_config_dir();
 
 void config_get_system_buid(char **system_buid);
 
 int config_has_device_record(const char *udid);
-int config_get_device_record(const char *udid, char **record_data, uint64_t *record_size);
-int config_set_device_record(const char *udid, char* record_data, uint64_t record_size);
+int config_get_device_record(const char *udid, char **record_data,
+                             uint64_t *record_size);
+int config_set_device_record(const char *udid, char *record_data,
+                             uint64_t record_size);
 int config_remove_device_record(const char *udid);
 
 void config_device_record_get_host_id(const char *udid, char **host_id);
